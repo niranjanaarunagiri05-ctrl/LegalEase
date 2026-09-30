@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LegalEase - Legal Made Simple</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#f8f9fa;color:#222}
+  header{background:#1a237e;color:#fff;padding:15px 8%;display:flex;justify-content:space-between;align-items:center}
+  header h1{font-size:22px}
+ .hero{padding:60px 8%;text-align:center;background:linear-gradient(135deg,#1a237e,#3949ab);color:white}
+ .hero h2{font-size:36px;margin-bottom:15px}
+ .hero p{font-size:18px;opacity:0.9;margin-bottom:25px}
+ .btn{background:#ffca28;color:#000;padding:12px 28px;border:none;border-radius:25px;font-weight:bold;cursor:pointer;font-size:16px}
+ .upload-box{background:white;max-width:600px;margin:-30px auto 40px;padding:30px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center}
+ .upload-box input{margin:20px 0}
+ .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px 8%}
+ .card{background:white;padding:25px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.05);text-align:center}
+ .card h3{margin-bottom:10px;color:#1a237e}
+  footer{background:#1a237e;color:white;text-align:center;padding:20px;margin-top:30px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚖️ LegalEase</h1>
+  <span>GitHub: niranjanaarunagiri05-ctrl</span>
+</header>
+
+<section class="hero">
+  <h2>Making Legal Language Simple</h2>
+  <p>Upload any legal document and get a simple, easy-to-understand explanation in seconds.</p>
+  <button class="btn">Try Now - It's Free</button>
+</section>
+
+<div class="upload-box">
+  <h3>📄 Upload Your Legal Document</h3>
+  <p>Supported: PDF, DOCX, TXT</p>
+  <input type="file" id="fileInput">
+  <br>
+  <button class="btn" onclick="simplify()">Simplify Document</button>
+  <p id="result" style="margin-top:20px;font-weight:bold"></p>
+</div>
+
+<section class="features">
+  <div class="card">
+    <h3>📝 Summarization</h3>
+    <p>Get key points from long legal documents in 30 seconds.</p>
+  </div>
+  <div class="card">
+    <h3>🔍 Term Explainer</h3>
+    <p>Confusing words? We explain them in simple English.</p>
+  </div>
+  <div class="card">
+    <h3>🔒 Secure & Private</h3>
+    <p>Your documents are never stored. 100% safe.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Built with ❤️ by Niranjana | LegalEase © 2026</p>
+</footer>
+
+<script>
+  function simplify(){
+    const file = document.getElementById('fileInput').files[0];
+    const result = document.getElementById('result');
+    if(!file){
+      result.innerText = "Please select a file first!";
+      result.style.color = "red";
+      return;
+    }
+    result.innerText = "⏳ Analyzing " + file.name + "... (AI integration coming soon!)";
+    result.style.color = "#1a237e";
+  }
+</script>
+
+</body>
+</html>
